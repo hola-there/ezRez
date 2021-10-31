@@ -20,14 +20,14 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1>Jonathan Doe</h1>
-					<h2>Web Designer, Director</h2>
+					<h1>{{firstname}} {{lastname}}</h1>
+					<h2>{{title}}</h2>
 				</div>
 
 				<div class="yui-u">
 					<div class="contact-info">
 						<h3><a id="pdf" href="#">Download PDF</a></h3>
-						<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
+						<h3><a href="mailto:{{emailaddress}}">{{emailaddress}}</a></h3>
 						<h3>{{user_phone}}</h3>
 					</div><!--// .contact-info -->
 				</div>
@@ -44,7 +44,7 @@
 						</div>
 						<div class="yui-u">
 							<p class="enlarge">
-								Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change. 
+								{{shortDescription}} 
 							</p>
 						</div>
 					</div><!--// .yui-gf -->
@@ -54,21 +54,14 @@
 							<h2>Skills</h2>
 						</div>
 						<div class="yui-u">
-
+							<template v-for="skill in skills" :key="skills">
+								<li>{{ item.msg }}</li>
 								<div class="talent">
-									<h2>Web Design</h2>
-									<p>Assertively exploit wireless initiatives rather than synergistic core competencies.	</p>
+									<h2>{{skill.title}}</h2>
+									<p>{{skill.description}}</p>
 								</div>
-
-								<div class="talent">
-									<h2>Interface Design</h2>
-									<p>Credibly streamline mission-critical value with multifunctional functionalities.	 </p>
-								</div>
-
-								<div class="talent">
-									<h2>Project Direction</h2>
-									<p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</p>
-								</div>
+								<hr>
+							  </template>
 						</div>
 					</div><!--// .yui-gf -->
 
